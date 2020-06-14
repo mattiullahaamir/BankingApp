@@ -1,24 +1,20 @@
 import { Component, OnInit } from "@angular/core";
-import { LoginService } from "../services/login/login.service";
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.scss"],
+  selector: "app-register",
+  templateUrl: "./register.component.html",
+  styleUrls: ["./register.component.scss"],
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   username: string = "";
+  email: string = "";
   password: string = "";
   isUsernameValid: boolean = true;
   error: any = null;
 
-  constructor(private loginService: LoginService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.loginService.errorSubject.subscribe((errorMessage) => {
-      this.error = errorMessage;
-    });
-  }
+  ngOnInit(): void {}
 
   // validating username
   validateUsername(): void {
@@ -36,13 +32,6 @@ export class LoginComponent implements OnInit {
       this.validateUsername();
     } else if (type === "password") {
       this.password = event.target.value;
-    }
-  }
-
-  onSubmit() {
-    if (this.isUsernameValid) {
-      return;
-      this.loginService.login(this.username, this.password);
     }
   }
 }

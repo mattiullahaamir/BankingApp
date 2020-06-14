@@ -1,11 +1,11 @@
-<!-- mat-card login form -->
+<!-- mat-card register form -->
 
-<section class="section-login">
+<section class="section-register section-login">
   <div class="container">
     <div class="row">
       <div class="offset-md-3 col-md-6">
         <mat-card id="login-card">
-          <h1 class="text-center"><b>Login</b></h1>
+          <h1 class="text-center"><b>Register</b></h1>
           <mat-card-content>
             <mat-form-field class="full-width login-place">
               <input
@@ -21,6 +21,17 @@
             <p *ngIf="!isUsernameValid" class="error-clr">
               Username can consist of letters and numbers only.
             </p>
+            <mat-form-field class="full-width login-place flex">
+              <input
+                matInput
+                placeholder="Enter Email"
+                type="email"
+                [(ngModel)]="email"
+                (keyup)="onKey($event, 'email')"
+                required
+              />
+              <mat-icon matSuffix> email</mat-icon>
+            </mat-form-field>
             <mat-form-field class="full-width login-place">
               <input
                 matInput
@@ -35,29 +46,27 @@
           </mat-card-content>
 
           <div class="row">
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
               <button
                 class="full-width btn-login text-uppercase p-2 mt-2"
                 mat-flat-button
-                (click)="onSubmit()"
               >
                 Login
               </button>
-            </div>
-            <div class="col-md-6">
+            </div> -->
+            <div class="col-md-12">
               <button
                 class="full-width btn-register text-uppercase p-2 mt-2"
                 mat-flat-button
-                [routerLink]="['/register']"
               >
                 Register
               </button>
             </div>
           </div>
 
-          <p class="full-width text-center mt-3">
+          <!-- <p class="full-width text-center mt-3">
             <a href="#">Forget Password !</a>
-          </p>
+          </p> -->
           <mat-card-subtitle class="mt-5 text-center"
             >&copy;2020 By Aamir Qureshi. All Rights
             Reserved.</mat-card-subtitle

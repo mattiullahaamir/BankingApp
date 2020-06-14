@@ -4,10 +4,11 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #303030;
+  background-color: transparent;
   overflow: hidden;
 }
 
@@ -22,11 +23,9 @@ body {
   #login-card {
     padding: 5em 5em;
     background-color: white 0.5;
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 1) 15%,
-      rgba(107, 107, 103, 1) 75%
-    );
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 1) 15%,
+        rgba(107, 107, 103, 1) 75%);
     color: black;
 
     .login-place {
@@ -38,10 +37,25 @@ body {
       border: 1px transparent solid;
       background-color: #303030;
     }
+
     .btn-login:hover {
       color: #303030;
       border: 1px #303030 solid;
       background-color: transparent;
+      transition: background-color 0.2s ease-out;
+    }
+
+    .btn-register {
+      color: #303030;
+      border: 1px #303030 solid;
+      background-color: transparent;
+      transition: background-color 0.2s ease-out;
+    }
+
+    .btn-register:hover {
+      color: #ffffff;
+      border: 1px #303030 solid;
+      background-color: #303030;
       transition: background-color 0.2s ease-out;
     }
 
@@ -52,12 +66,13 @@ body {
     a {
       color: #303030;
     }
+
     a:hover {
       color: #303030;
-      text-decoration-line: none;
-      font-weight: bold;
-      font-size: 1.5em;
-      transition: font-size 0.3s ease-in-out;
+      //text-decoration-line: underline;
+      //font-weight: bold;
+      //font-size: 1.5em;
+      //transition: font-size 0.3s ease-in-out;
     }
 
     .mat-focused .mat-form-field-label {
